@@ -18,7 +18,7 @@ function AddSupplier() {
       const bounds = new window.google.maps.LatLngBounds(center);
       map.fitBounds(bounds);
       var listener = google.maps.event.addListener(map, "idle", function() { 
-        if (map.getZoom() > 4) map.setZoom(4); 
+        if (map.getZoom() > 6) map.setZoom(6); 
         google.maps.event.removeListener(listener); 
       });
     setMap(map);
@@ -58,7 +58,7 @@ function AddSupplier() {
   return (
     <React.Fragment>
     <button onClick={()=>setShowAdd(true)} className="bg-green-400 p-4">Add Supplier</button>
-    <div className={`absolute z-50 w-10/12 height60 top-0 right-${showAdd? "0":"full"} flex`}>
+    <div className={`absolute z-50 w-10/12 height60 top-0 ${showAdd? "right-0":"hidden"} flex`}>
       <div onClick={()=>setShowAdd(false)} className="w-1/2 bg-black opacity-25"></div>
       <div className="w-1/2 bg-white p-6">
         <div className="flex justify-between items-center mt-3 ml-4">
